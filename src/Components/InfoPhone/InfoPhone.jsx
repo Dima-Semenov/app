@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { getInfoPhone } from '../api/api';
 import { Loader } from '../Loader/Loader';
 
 export const InfoPhone = ({ id, reset }) => {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    fetch(`/api/phones/${id}.json`)
-      .then(response => response.json())
+    getInfoPhone(id)
       .then(setInfo);
-  }, [])
+  }, [id])
 
   return (
     <div className="col-md-10">

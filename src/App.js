@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import { getPhones } from './Components/api/api';
 import { InfoPhone } from './Components/InfoPhone/InfoPhone';
 import { PhoneCatalog } from './Components/PhoneCatalog/PhoneCatalog';
 
@@ -8,8 +9,7 @@ function App() {
   const [selectedPhone, setSelectedPhone] = useState(0);
 
   useEffect(() => {
-    fetch('/api/phones.json')
-      .then(response => response.json())
+    getPhones('/api/phones.json')
       .then(setPhones);
   }, [])
 

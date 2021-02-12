@@ -13,12 +13,10 @@ const request = (url) => {
   });
 };
 
-export const getPhones = (url) => {
-  return request(url)
-    .then(response => response)
+export const getPhones = () => {
+  return request('/api/phones.json')
 }
 
 export const getInfoPhone = (id) => {
   return request(`/api/phones/${id}.json`)
-    .then(response => response)
 }

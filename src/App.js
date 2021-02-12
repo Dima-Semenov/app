@@ -9,7 +9,7 @@ function App() {
   const [selectedPhone, setSelectedPhone] = useState(0);
 
   useEffect(() => {
-    getPhones('/api/phones.json')
+    getPhones()
       .then(setPhones);
   }, [])
 
@@ -43,31 +43,24 @@ function App() {
         </div>
 
         <div className="col-md-10">
-          <ul className="phones">
-            {
-              selectedPhone ? (
-                <InfoPhone
-                  id={selectedPhone}
-                  reset={() => setSelectedPhone(0)}
-                />
-              ) : (
-                <>
-                  {phones.map(phone => (
-                    <PhoneCatalog
-                      key={phone.id}
-                      {...phone}
-                      select={(id) => {
-                        setSelectedPhone(id)
-                      }}
-                    />
-                  ))}
-                </>
-              )
-            }
-          </ul>
+          {
+            selectedPhone ? (
+              <InfoPhone
+                id={selectedPhone}
+                reset={() => setSelectedPhone(0)}
+              />
+            ) : (
+              <PhoneCatalog
+                phones={phones}
+                select={(id) => {
+                  setSelectedPhone(id)
+                }}
+              />
+            )
+          }
         </div>
       </div>
-</div>
+    </div>
   );
 }
 

@@ -34,7 +34,7 @@ function App() {
           <ul className="phones">
             <li className="thumbnail">
               <a href="#!/phones/motorola-xoom-with-wi-fi" className="thumb">
-                <img alt="Motorola XOOM™ with Wi-Fi" src="img/phones/motorola-xoom-with-wi-fi.0.jpg" />
+                <img alt="Motorola XOOM™ with Wi-Fi" src="./img/phones/motorola-xoom-with-wi-fi.0.jpg" />
               </a>
 
               <div className="phones__btn-buy-wrapper">
